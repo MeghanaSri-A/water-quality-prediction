@@ -1,0 +1,951 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================
+   MAIN APPLICATION
+========================================= */
+
+.app {
+  min-height: 100vh;
+
+  padding: 55px 70px 90px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(3, 35, 61, 0.95),
+      rgba(0, 104, 165, 0.80)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+      center center / cover fixed;
+
+  color: #172033;
+
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIONS
+========================================= */
+
+.background-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 500px;
+  height: 500px;
+
+  top: -260px;
+  right: -120px;
+}
+
+.circle-two {
+  width: 400px;
+  height: 400px;
+
+  bottom: -220px;
+  left: -150px;
+}
+
+
+/* =========================================
+   MAIN DASHBOARD
+========================================= */
+
+.dashboard {
+  width: 100%;
+
+  max-width: 1500px;
+
+  min-height: calc(100vh - 145px);
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 55px;
+
+  color: white;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.brand-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 29px;
+}
+
+.brand h1 {
+  margin: 0;
+
+  font-size: 26px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.brand p {
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 19px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #4ade80;
+
+  box-shadow: 0 0 12px #4ade80;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.content {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(500px, 0.9fr)
+    minmax(650px, 1.1fr);
+
+  gap: 110px;
+
+  align-items: center;
+
+  min-height: 570px;
+}
+
+
+/* =========================================
+   LEFT INTRODUCTION
+========================================= */
+
+.intro {
+  color: white;
+
+  max-width: 620px;
+}
+
+.badge {
+  display: inline-block;
+
+  padding: 9px 16px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  font-size: 11px;
+
+  letter-spacing: 1.6px;
+
+  font-weight: 800;
+}
+
+.intro h2 {
+  margin: 26px 0 22px;
+
+  font-size: clamp(50px, 5vw, 76px);
+
+  line-height: 1.02;
+
+  letter-spacing: -3px;
+}
+
+.intro h2 span {
+  display: block;
+
+  color: #6ee7ff;
+}
+
+.description {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  line-height: 1.8;
+
+  font-size: 17px;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.feature-list {
+  margin-top: 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.feature-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+
+  font-size: 22px;
+}
+
+.feature strong {
+  display: block;
+
+  font-size: 15px;
+
+  margin-bottom: 5px;
+}
+
+.feature p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   PREDICTION CARD
+========================================= */
+
+.prediction-card {
+  width: 100%;
+
+  min-height: 560px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-radius: 30px;
+
+  padding: 45px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(20px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.card-header h3 {
+  margin: 0;
+
+  color: #162033;
+
+  font-size: 26px;
+}
+
+.card-header p {
+  margin: 7px 0 0;
+
+  color: #718096;
+
+  font-size: 14px;
+}
+
+.water-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 17px;
+
+  background: #e5f7ff;
+
+  font-size: 29px;
+}
+
+
+/* =========================================
+   INPUT GRID
+========================================= */
+
+.input-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 27px;
+}
+
+.input-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.input-group label {
+  color: #374151;
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  height: 64px;
+
+  padding: 0 80px 0 18px;
+
+  border: 1px solid #d7e0e9;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  color: #172033;
+
+  background: #f8fafc;
+
+  transition: all 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: #a0aaba;
+}
+
+.input-wrapper input:hover {
+  border-color: #b9c8d6;
+}
+
+.input-wrapper input:focus {
+  border-color: #008bd2;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(0, 139, 210, 0.1);
+}
+
+.input-wrapper span {
+  position: absolute;
+
+  right: 16px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #8a94a6;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button-row {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.predict-button {
+  flex: 1;
+
+  height: 62px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #008bd2,
+      #0065b3
+    );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transition: all 0.2s ease;
+
+  box-shadow:
+    0 10px 25px rgba(0, 120, 190, 0.28);
+}
+
+.predict-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 30px rgba(0, 120, 190, 0.38);
+}
+
+.predict-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.predict-button span {
+  font-size: 20px;
+}
+
+.reset-button {
+  height: 62px;
+
+  padding: 0 25px;
+
+  border: 1px solid #d7e0e9;
+
+  background: white;
+
+  border-radius: 13px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.reset-button:hover {
+  background: #f4f7fa;
+
+  border-color: #bdc9d5;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 25px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid;
+}
+
+.result.safe {
+  background: #ecfdf5;
+
+  border-color: #a7f3d0;
+}
+
+.result.danger {
+  background: #fff1f2;
+
+  border-color: #fecdd3;
+}
+
+.result-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 23px;
+
+  font-weight: 800;
+}
+
+.safe .result-icon {
+  background: #10b981;
+}
+
+.danger .result-icon {
+  background: #ef4444;
+}
+
+.result-label {
+  color: #64748b;
+
+  font-size: 10px;
+
+  letter-spacing: 1.4px;
+
+  font-weight: 800;
+}
+
+.result-content h3 {
+  margin: 5px 0;
+
+  font-size: 18px;
+}
+
+.result-content p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border-radius: 11px;
+
+  background: #fff1f2;
+
+  color: #be123c;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  margin-top: 55px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+
+  padding-bottom: 10px;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1500px) {
+
+  .app {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  .content {
+    gap: 130px;
+
+    min-height: 650px;
+  }
+
+  .prediction-card {
+    min-height: 620px;
+
+    padding: 50px;
+  }
+
+  .input-wrapper input {
+    height: 68px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .app {
+    padding: 40px 30px 70px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    min-height: auto;
+  }
+
+  .intro {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+  }
+
+  .description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .feature-list {
+    max-width: 500px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .prediction-card {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    min-height: auto;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .app {
+    padding: 25px 15px 50px;
+  }
+
+  .dashboard {
+    min-height: auto;
+  }
+
+  .header {
+    margin-bottom: 35px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .brand-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 23px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .brand p {
+    font-size: 11px;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .intro h2 {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .feature-list {
+    text-align: left;
+
+    margin-top: 35px;
+
+    gap: 18px;
+  }
+
+  .feature-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .prediction-card {
+    padding: 22px;
+
+    border-radius: 20px;
+  }
+
+  .card-header h3 {
+    font-size: 21px;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .input-wrapper input {
+    height: 55px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .predict-button,
+  .reset-button {
+    width: 100%;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+
+    text-align: center;
+
+    line-height: 1.7;
+  }
+
+}
