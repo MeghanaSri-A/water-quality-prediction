@@ -19,14 +19,6 @@ The platform enables users to input water sample parameters, receive instant ML-
 - 💻 Clean, responsive web interface
 - 📈 Visual insights into water quality indicators
 
-## 🏗️ System Architecture
-
-*(Add an architecture diagram/image here if you have one)*
-
-## 🔄 Prediction Workflow
-
-*(Add a workflow diagram/image here if you have one)*
-
 ## 🛠️ Tech Stack
 
 | Category              | Technologies                        |
@@ -40,13 +32,15 @@ The platform enables users to input water sample parameters, receive instant ML-
 ## 📸 Application Preview
 
 ### 🏠 Home
-*(screenshot)*
+<img width="1209" height="762" alt="image" src="https://github.com/user-attachments/assets/3f41bc65-1382-469a-b2f5-5f6c5608a124" />
 
-### 📄 Prediction Page
-*(screenshot)*
 
-### 📊 Results / Insights
-*(screenshot)*
+### 📄 Prediction Page if Water is Safe
+<img width="1442" height="828" alt="image" src="https://github.com/user-attachments/assets/2c13526a-be5a-4a28-af53-64d8f1e301e8" />
+
+### 📄 Prediction Page if Water is contaminated
+<img width="1401" height="818" alt="image" src="https://github.com/user-attachments/assets/dfe21e9f-6de5-4501-8525-0565cb51040c" />
+
 
 ## ⚙️ Installation
 
@@ -110,14 +104,6 @@ water-quality-prediction/
 ├── .gitignore
 └── README.md
 
-
-## 📊 Dataset
-
-*(Add dataset source here — e.g. Kaggle Water Potability Dataset — and describe the features used: pH, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic Carbon, Trihalomethanes, Turbidity)*
-
-## 🧠 Model
-
-*(Add details of the ML algorithm used — e.g. Random Forest / XGBoost / Logistic Regression — along with accuracy, precision, recall, and F1-score)*
 
 ## 🚀 Future Enhancements
 
