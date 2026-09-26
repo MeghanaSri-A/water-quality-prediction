@@ -1,33 +1,30 @@
 # 💧 Water Quality Prediction
 
-An AI/ML-powered web application that predicts water quality and potability using physicochemical parameters, helping determine whether water is safe for consumption.
+An AI/ML-powered web application that predicts water contamination using physicochemical parameters, helping determine whether water is safe for consumption.
 
-![Python](https://img.shields.io/badge/Python-3.x-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange) ![Flask](https://img.shields.io/badge/Flask-Backend-black) ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
+![Python](https://img.shields.io/badge/Python-3.x-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-RandomForest-orange) ![Flask](https://img.shields.io/badge/Flask-Backend-black) ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
 
 ## 📖 Overview
 
-Water Quality Prediction is a full-stack machine learning application that analyzes physicochemical water parameters — such as pH, hardness, turbidity, and dissolved solids — to predict whether a water sample is safe for consumption. The project combines data preprocessing, model training, and a web interface to deliver fast, accurate quality assessments through an intuitive dashboard.
-
-The platform enables users to input water sample parameters, receive instant ML-based predictions, and view the underlying data insights — making water safety analysis accessible and easy to interpret.
+Water Quality Prediction is a full-stack machine learning application that analyzes physicochemical water parameters to predict water contamination. The project includes a data preprocessing notebook, a Random Forest classifier trained on water quality readings, and a web-based frontend for users to input parameters and view predictions.
 
 ## ✨ Features
 
-- 🧪 Predicts water potability from physicochemical parameters
+- 🧪 Predicts water contamination (safe/unsafe) from physicochemical parameters
 - 📊 Data preprocessing & exploratory analysis notebook
-- 🤖 Machine learning model for classification
-- 🌐 REST API backend for serving predictions
-- 💻 Clean, responsive web interface
-- 📈 Visual insights into water quality indicators
+- 🤖 Random Forest classifier for predictions
+- 🌐 Flask backend API to serve the model
+- 💻 React-based frontend for user interaction
 
 ## 🛠️ Tech Stack
 
-| Category              | Technologies                        |
-|------------------------|--------------------------------------|
-| Backend                | Python, Flask / FastAPI             |
-| Machine Learning       | scikit-learn, Pandas, NumPy         |
-| Data Processing        | Jupyter Notebook                    |
-| Frontend               | React, HTML/CSS, JavaScript         |
-| Model Persistence      | Pickle / Joblib                     |
+| Category           | Technologies                          |
+|---------------------|----------------------------------------|
+| Backend             | Python, Flask                         |
+| Machine Learning    | scikit-learn (Random Forest), Pandas, NumPy |
+| Data Processing     | Jupyter Notebook (`Preprocessing.ipynb`) |
+| Frontend            | React, HTML, CSS, JavaScript          |
+| Model Persistence   | Joblib (`.pkl`)                       |
 
 ## 📸 Application Preview
 
@@ -104,6 +101,31 @@ water-quality-prediction/
 ├── .gitignore
 └── README.md
 
+## 📊 Dataset
+
+The model is trained on `water_quality_week1.xls`, which contains the following columns:
+
+| Column | Description |
+|---|---|
+| `pH` | Acidity/alkalinity of the water |
+| `Turbidity(NTU)` | Cloudiness of the water |
+| `Dissolved_Oxygen(mg/L)` | Oxygen available in the water |
+| `Temperature(°C)` | Water temperature |
+| `Conductivity(µS/cm)` | Electrical conductivity |
+| `Nitrate(mg/L)` | Nitrate concentration |
+| `Chloride(mg/L)` | Chloride concentration |
+| `Coliform_Count(CFU/100mL)` | Bacterial contamination indicator |
+| `Contamination` | Target label — 0 (safe) or 1 (contaminated) |
+
+## 🧠 Model
+
+- **Algorithm:** Random Forest Classifier (`scikit-learn`, `n_estimators=100`)
+- **Features used:** `pH`, `Turbidity(NTU)`, `Dissolved_Oxygen(mg/L)`, `Conductivity(µS/cm)`, `Nitrate(mg/L)`
+- **Target:** `Contamination` (binary: 0 = safe, 1 = contaminated)
+- **Train/test split:** 80/20 (`random_state=42`)
+- **Missing values:** filled with column mean
+- **Output:** trained model serialized with `joblib` as `water_quality_model.pkl`
+
 
 ## 🚀 Future Enhancements
 
@@ -111,7 +133,7 @@ water-quality-prediction/
 - 🗺️ Location-based water quality mapping
 - 📱 Mobile application support
 - 🔔 Alert system for unsafe water levels
-- 🧠 Improved model accuracy with deep learning
+- 🧠 Expand training data and improve model accuracy
 
 ## 📄 License
 
